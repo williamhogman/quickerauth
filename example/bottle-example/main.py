@@ -29,7 +29,7 @@ def qrcode():
 def qauth(cred):
     token = from_url_fragment(cred)
     if qa.verify_token(token):
-        return "Authentication successful"token.token_id.encode("hex")
+        return "Authentication successful "+token.token_id.encode("hex")
     else:
         return "Authentication failed!"
 
