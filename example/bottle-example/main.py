@@ -22,7 +22,7 @@ def qrcode():
     response.content_type = "image/png"
     code = QuickerCode(qa.generate_token(),"http",socket.gethostname()+":8080/qauth")
     bfr = StringIO.StringIO()
-    code.get_image().save(bfr,format="png")
+    code.get_image().save(bfr,kind="png")
     return bfr.getvalue()
 
 @route("/qauth/<cred:path>")
